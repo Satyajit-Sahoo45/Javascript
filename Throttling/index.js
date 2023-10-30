@@ -26,14 +26,13 @@ const myThrottle = (callback, delay) => {
         if (now - last < delay) return; // 2500 - 1100 = 1400
         last = now;
         return callback(...args);
-    }
-}
+    };
+};
 
 const throttledCount = myThrottle(() => {
-    const now = new Date().getTime()
-    console.log(now - start)
-    count.innerHTML = ++triggerCount;
-}, 800)
+    triggerCount += 1
+    count.innerHTML = triggerCount;
+}, 800);
 
 
 btn.addEventListener("click", () => {
