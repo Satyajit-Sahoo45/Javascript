@@ -27,7 +27,8 @@ const myDebounce = (callback, delay) => {
 
 
 const debouncedCount = myDebounce(() => {
-    count.innerHTML = ++triggerCount;
+    triggerCount += 1
+    count.innerHTML = triggerCount;
 }, 800)
 
 btn.addEventListener("click", () => {
